@@ -1,4 +1,40 @@
 import Image from "next/image";
+import { FaLinkedin, FaEnvelope, FaPhone } from "react-icons/fa";
+
+const LinkedInIcon = () => (
+  <a
+    href="https://www.linkedin.com/in/xycjustin/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-2 text-blue-600 hover:text-blue-800"
+  >
+    <FaLinkedin size={24} />
+    LinkedIn
+  </a>
+);
+
+const EmailIcon = () => (
+  <a
+    href="mailto:xycjustin@hotmail.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-2 hover:underline hover:underline-offset-4 text-gray-600"
+  >
+    <FaEnvelope size={24} />
+    Email
+  </a>
+);
+
+const PhoneIcon = () => (
+  <a
+    href="tel:7782397162"
+    rel="noopener noreferrer"
+    className="flex items-center gap-2 hover:underline hover:underline-offset-4 text-white-600"
+  >
+    <FaPhone size={19} />
+    My Number
+  </a>
+);
 
 export default function Home() {
   return (
@@ -12,19 +48,29 @@ export default function Home() {
           height={38}
           priority
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
+        <ol className="text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
+          <li>Enterpreneur, husband, leader.</li>
+
+          {/* <li className="mb-2">
             Get started by editing{" "}
             <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
               app/page.tsx
             </code>
             .
-          </li>
-          <li>Save and see your changes instantly.</li>
+          </li> */}
         </ol>
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
+        {
+          <footer className="row-start-5 flex gap-10 flex-wrap items-center justify-center">
+            {/* Render the Icon Components */}
+            <LinkedInIcon />
+
+            <EmailIcon />
+            <PhoneIcon />
+          </footer>
+
+          /* <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
           href="https://www.linkedin.com/in/xycjustin/"
           target="_blank"
@@ -38,10 +84,11 @@ export default function Home() {
             height={16}
           />
           Linkedin
-        </a>
-        <a
+        </a> */
+        }
+        {/* <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+          href="mailto:xycjustin@hotmail.com"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -53,22 +100,14 @@ export default function Home() {
             height={16}
           />
           Email
-        </a>
-        <a
+        </a> */}
+        {/* <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
+          href="tel:7782397162"
           rel="noopener noreferrer"
         >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+          778-239-7162
+        </a> */}
       </footer>
     </div>
   );
