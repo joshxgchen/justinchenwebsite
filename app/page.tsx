@@ -2,12 +2,16 @@
 
 import Image from "next/image";
 import { FaLinkedin, FaEnvelope, FaPhone } from "react-icons/fa";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, ReactNode } from "react";
 
 // LazyLoad component
-const LazyLoad = ({ children }) => {
+interface LazyLoadProps {
+  children: ReactNode;
+}
+
+const LazyLoad = ({ children }: LazyLoadProps) => {
   const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef();
+  const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -40,7 +44,7 @@ const LazyLoad = ({ children }) => {
 };
 
 // Update AnimatedText to accept an array of words
-const AnimatedText = ({ words }) => {
+const AnimatedText = ({ words }: { words: string[] }) => {
   return (
     <div>
       {words.map((word, wordIndex) => (
@@ -113,7 +117,7 @@ export default function Home() {
           priority
         />
 
-        {/* LazyLoad component for the animated text */}
+        {/* LazyLoad component for the animated text and video */}
         <LazyLoad>
           <ol className="text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
             <AnimatedText words={words} />
