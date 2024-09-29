@@ -8,6 +8,12 @@ import { useEffect, useRef, useState, ReactNode } from "react";
 interface LazyLoadProps {
   children: ReactNode;
 }
+<style jsx>{`
+  .responsive-image {
+    max-width: 100%; // Ensures the image scales down on smaller screens
+    height: auto; // Maintains the aspect ratio
+  }
+`}</style>;
 
 const LazyLoad = ({ children }: LazyLoadProps) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -109,7 +115,7 @@ export default function Home() {
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center justify-center">
         <Image
-          className="dark:invert"
+          className="responsive-image"
           src="/justin-modified.png" // Reference your local image
           alt="My Local Image"
           width={180}
